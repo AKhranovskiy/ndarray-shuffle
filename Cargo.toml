@@ -1,0 +1,25 @@
+[package]
+name = "ndarray-shuffle"
+version = "0.5.0"
+edition = "2021"
+authors = ["Andrey Khranovsky <andrey.khranovsky@gmail.com>"]
+description = "Extension to ndarray to shuffle elements"
+readme = "README.md"
+repository = "https://github.com/AKhranovskiy/ndarray-shuffle"
+license = "MIT OR Apache-2.0"
+keywords = ["ndarray", "shuffle"]
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ndarray = "0.15"
+rand = { version = "0.8", features = ["small_rng", "simd_support"] }
+rayon = "1.6"
+thiserror = "1.0"
+
+[dev-dependencies]
+criterion = "0.4"
+
+[[bench]]
+name = "shuffle_bench"
+harness = false
+
